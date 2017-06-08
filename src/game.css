@@ -1,0 +1,59 @@
+.header { 
+    text-align: center;
+}
+
+h2 small { 
+    display: block;
+    margin-left: 10px;
+    color: grey;
+    font-size: 0.5em;
+}
+
+form.game { 
+    background-color: darkgreen;
+    padding: 20px;
+}
+
+#current_gametype { 
+    width: 150px; 
+    margin-right: 20px; 
+    font-size: 1.5em;
+}
+
+#current_score { 
+    width: 60px; 
+    margin-right: 20px; 
+    font-size: 1.5em;
+}
+
+#submit { 
+    font-size: 1.5em;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+table { 
+    padding: 1em;
+    width: 100%;
+    text-align: right;
+}
+
+table thead tr { 
+    height: 3em; 
+}
+
+table td.roundnr { 
+    width: 10%;
+}
+
+table td.gametype { 
+    width: 20%; 
+}
+
+table td.player { 
+    width: 15%% 
+}
+
+table td.delete { 
+    width: 10%;
+}
