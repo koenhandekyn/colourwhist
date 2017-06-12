@@ -271,7 +271,7 @@ define('games',['exports', 'gundb', 'aurelia-framework'], function (exports, _gu
       var _this2 = this;
 
       console.log('fetching random name for game');
-      fetch('http://setgetgo.com/randomword/get.php').then(function (response) {
+      fetch('https://setgetgo.com/randomword/get.php').then(function (response) {
         return response.text();
       }).then(function (name) {
         console.log('response', name);return _this2.gamesDb.set({ name: name });
