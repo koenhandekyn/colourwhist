@@ -37,8 +37,8 @@ define('environment',["exports"], function (exports) {
     value: true
   });
   exports.default = {
-    debug: true,
-    testing: true
+    debug: false,
+    testing: false
   };
 });
 define('game',['exports', 'app', 'gundb', 'games', 'aurelia-framework', './app'], function (exports, _app, _gundb, _games, _aureliaFramework, _app2) {
@@ -297,7 +297,7 @@ define('gundb',['exports'], function (exports) {
   var GunDb = exports.GunDb = function GunDb() {
     _classCallCheck(this, GunDb);
 
-    this.db = Gun('http://colour-whist-gun.herokuapp.com/gun');
+    this.db = Gun('https://colour-whist-gun.herokuapp.com/gun');
   };
 });
 define('main',['exports', './environment'], function (exports, _environment) {
