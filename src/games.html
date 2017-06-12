@@ -1,19 +1,26 @@
 <template>
   <require from="./games.css"></require>
-  <section class="hero">
-    <div class="hero-body">
-      <div class="">
-        <h2 class="title">Games</h2>
-        <ul class="menu-list">
-          <li class="" repeat.for="[game_id, game] of games">
-            <a route-href="route: game; params.bind: { id: game_id }">${game.name}</a>
-            <!--<a href="#" click.delegate="$parent.removeGame(game_id)" title="Remove">[X]</a>-->
-          </li>
-        </ul>
-        <section class="section">
-          <a class="button is-primary" href="#" click.delegate="newGame()" title="New">New Game</a>
-        </section>
-      </div>
-    </div>
+  <section class="section content">
+    <h1>What's this?</h1>
+    <p>This is a Coulour Whist score keeping application written in javascript using 
+       <a href="http://aurelia.io/">Aurelia</a> as the main Javascript framework and
+       <a href="gun.js.org">GunDB</a> for persistence and synchronisation of the data.
+       It's currently written as a <a href="https://developers.google.com/web/progressive-web-apps/">Progressive Web App</a>.
+       To create a new game, simply click <a class="" href="#" click.delegate="newGame()" title="New">New Game</a>
+       and a new Game with a random name will be created.
+       To allow others to join in the score keeping, just share the URL with them.
+    </p>
+  </section>      
+  <section class="games">
+    <h2 class="title">Your Games</h2>
+    <ul class="menu-list">
+      <li class="" repeat.for="[game_id, game] of games">
+        <a route-href="route: game; params.bind: { id: game_id }">${game.name}</a>
+        <!--<a href="#" click.delegate="$parent.removeGame(game_id)" title="Remove">[X]</a>-->
+      </li>
+    </ul>
+    <section class="section">
+      <a class="button is-primary" href="#" click.delegate="newGame()" title="New">New Game</a>
+    </section>
   </section>
 </template>
