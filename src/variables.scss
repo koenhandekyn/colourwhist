@@ -1,0 +1,26 @@
+// 1. Import the initial variables
+@import "node_modules/bulma/sass/utilities/initial-variables";
+
+// $blue: #72d0eb;
+// $pink: #ffb3b3;
+$green : #448833;
+$green-invert: lighten($green, 50%);
+// Add a serif family
+// $family-serif: "Merriweather", "Georgia", serif;
+
+// 3. Set the derived variables
+// Use the new pink as the primary color
+$primary: $green;
+$primary-invert: $green-invert;
+// Use the existing orange as the danger color
+// $danger: $orange;
+// Use the new serif family
+// $family-primary: $family-serif;
+// $body-background: $green;
+// $background: $green;
+
+$table-background: $green;
+$table: $white;
+$table-head: $white;
+$table-row-hover-background: darken($green, 10%);
+$table-border: $table-row-hover-background;

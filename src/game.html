@@ -1,61 +1,92 @@
 <template>
   <require from="./game.css"></require>
-  <section class="au-animate">
-
-    <section class="header">
-      <a route-href="route: games">Games</a>
-      <h2>${game.name} <small>${id}</small></h2>
+  <section class="">
+    <nav class="nav">
+      <div class="nav-left">
+        <a class="nav-item" route-href="route: games">Home</a>
+      </div>
+      <div class="nav-center">
+        <a class="nav-item">${game.name}</a>
+      </div>
+      <div class="nav-right">
+        <a class="nav-item" route-href="route: games">Home</a>
+      </div>
+    </nav>
+    <section class="">
       <form role="form" submit.delegate="submit()" class="game">
-        <select id="current_gametype" value.bind="current_gametype" change.delegate="selectGameType($event)">
-        <option repeat.for="name of gametypes | keys">${name}</option>
-      </select>
-        <input id="current_score" class="form-control" type="number" min="0" value.bind="current_score" />
-        <button id="submit" type="submit" disabled.bind="!canSubmit">Score</button>
+        <div class="field has-addons">
+          <p class="control is-expanded">
+            <span class="select is-fullwidth is-large">
+              <select id="current_gametype" value.bind="current_gametype" change.delegate="selectGameType($event)">
+                <option repeat.for="name of gametypes | keys">${name}</option>
+              </select>
+            </span>
+          </p>
+          <p class="control">
+            <input id="current_score" class="input is-large is-narrow" type="number" min="0" value.bind="current_score" />
+          </p>
+          <p class="control">
+            <button class="button is-large" id="submit" type="submit" disabled.bind="!canSubmit">Add</button>
+          </p>
+        </div>
+
       </form>
     </section>
 
-    <table class="rounds">
+    <table class="scores table">
       <thead>
         <tr>
           <td class="roundnr"></td>
-          <td class="gametype">Playing</td>
-          <td class="player"><input class="form-control" type="checkbox" checked.bind="current_players[0]"></td>
-          <td class="player"><input class="form-control" type="checkbox" checked.bind="current_players[1]"></td>
-          <td class="player"><input class="form-control" type="checkbox" checked.bind="current_players[2]"></td>
-          <td class="player"><input class="form-control" type="checkbox" checked.bind="current_players[3]"></td>
-          <th class="delete"></th>
-        </tr>
-        <tr>
-          <td class="roundnr"></td>
-          <td class="gametype">Players</td>
-          <td class="player">${players[1]}</td>
-          <td class="player">${players[2]}</td>
-          <td class="player">${players[3]}</td>
-          <td class="player">${players[0]}</td>
-          <th class="delete"></th>
+          <td class="gametype"></td>
+          <td class="player">
+            <div class="input-button-group">
+              <input class="form-control" type="checkbox" checked.bind="current_players[0]">
+              <label class="button">${players[0]}</label>
+            </div>
+          </td>
+          <td class="player">
+            <div class="input-button-group">
+              <input class="form-control" type="checkbox" checked.bind="current_players[1]">
+              <label class="button">${players[1]}</label>
+            </div>
+          </td>
+          <td class="player">
+            <div class="input-button-group">
+              <input class="form-control" type="checkbox" checked.bind="current_players[2]">
+              <label class="button">${players[2]}</label>
+            </div>
+          </td>
+          <td class="player">
+            <div class="input-button-group">
+              <input class="form-control" type="checkbox" checked.bind="current_players[3]">
+              <label class="button">${players[3]}</label>
+            </div>
+          </td>
         </tr>
         <tr>
           <th class="roundnr">#</th>
-          <th class="gametype">Totals:</th>
+          <th class="gametype"></th>
           <th class="player">${totals[0]}</th>
           <th class="player">${totals[1]}</th>
           <th class="player">${totals[3]}</th>
           <th class="player">${totals[2]}</th>
-          <th class="delete"></th>
+          <!--<th class="action"></th>-->
         </tr>
       </thead>
       <tbody>
-        <tr repeat.for="round of sortedRounds">
+        <tr repeat.for="round of sortedRounds" click.delegate="$parent.removeRound(round.id)">
           <td class="roundnr">${round.nr}</td>
           <td class="gametype">${round.gametype}</td>
           <td class="player">${round.s1}</td>
           <td class="player">${round.s2}</td>
           <td class="player">${round.s3}</td>
           <td class="player">${round.s4}</td>
-          <th class="delete"><a href="#" click.delegate="$parent.removeRound(round.id)" title="Remove">[X]</a></td>
+          <!--<td class="action"><a href="#" click.delegate="$parent.removeRound(round.id)" title="Remove" class="delete"></a></td>-->
         </tr>
       </tbody>
     </table>
-
+    <section class="section">
+      <a href="#" click.delegate="remove()" title="Remove" class="button">Destroy Game</a>
+    </section>
   </section>
 </template>

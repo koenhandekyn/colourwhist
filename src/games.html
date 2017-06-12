@@ -1,15 +1,19 @@
 <template>
   <require from="./games.css"></require>
-  <section class="au-animate games">
-      <h2>Games</h2>
-      <div class="row au-stagger">
-        <ul class="list-group" >
-          <li class="list-group-item" repeat.for="[game_id, game] of games">
+  <section class="hero">
+    <div class="hero-body">
+      <div class="">
+        <h2 class="title">Games</h2>
+        <ul class="menu-list">
+          <li class="" repeat.for="[game_id, game] of games">
             <a route-href="route: game; params.bind: { id: game_id }">${game.name}</a>
-            <a href="#" click.delegate="$parent.removeGame(game_id)" title="Remove">[X]</a>
+            <!--<a href="#" click.delegate="$parent.removeGame(game_id)" title="Remove">[X]</a>-->
           </li>
         </ul>
+        <section class="section">
+          <a class="button is-primary" href="#" click.delegate="newGame()" title="New">New Game</a>
+        </section>
       </div>
-      <a href="#" click.delegate="newGame()" title="New">New Game</a>
+    </div>
   </section>
 </template>

@@ -1,16 +1,40 @@
-html { 
-    background-color: grey;
-    font-family: Courier New, Courier, monospace;
+@import "variables";
+// 4. Import the rest of Bulma
+@import "node_modules/bulma/bulma";
+
+@media screen and (min-width: $tablet) { 
+    .main {
+        margin-top: 2em;
+        width: 769px;
+        margin-left: auto;
+        margin-right: auto;
+        border: 2px solid $table-border;
+    }
 }
-body { 
-    background-color: grey;
-    margin: 0px;
-}
-#container {
-    padding-top: 1em;
-    padding-bottom: 1em;
-    background-color: white;
-    margin-left: auto;
-    margin-right: auto;
-    width: 750px;
-}
+
+// .control, .section, .table, .xinput, .select xselect { 
+//     background-color: $green;
+//     color: $white;
+//     thead th, thead td { 
+//         color: $green-invert;
+//         color: white;
+//     }
+// }
+
+// html {
+//     background-color: grey;
+//     font-family: Courier New, Courier, monospace;
+// }
+// body {
+//     background-color: grey;
+//     margin: 0px;
+// }
+
+// .container {
+    // padding-top: 1em;
+    // padding-bottom: 1em;
+    // background-color: white;
+    // margin-left: auto;
+    // margin-right: auto;
+    // width: 750px;
+// }

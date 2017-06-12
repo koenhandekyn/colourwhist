@@ -18,8 +18,6 @@ export class Games {
   }
 
   deactivate() {
-    console.log("stop listening to gundb events");
-    this.gamesDb.off();
   }  
 
   removeGame(id) { 
@@ -33,11 +31,5 @@ export class Games {
       .then((response) => {return response.text(); })
       .then((name) => { console.log('response', name); return this.gamesDb.set( {name: name} ); });
   }
-
-  // created() { 
-  // }
-    
-  // activate(params) {
-  // }  
 }
 

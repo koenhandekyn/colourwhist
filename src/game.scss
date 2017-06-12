@@ -1,0 +1,94 @@
+// @import "variables";
+
+table {
+    thead { 
+    tr:first-child td { 
+        // padding-top: 20px;
+        height: 3em;
+        vertical-align: bottom;
+    }
+    }
+    tbody .gametype {
+        // width: 1rem;
+        // display: inline-block;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        // white-space: nowrap;        
+        max-width: 3rem;
+    }    
+    .roundnr { 
+        width: 1rem;
+    }
+    .player {
+        text-align: right;
+        width: 10%;
+        max-width: 10%;
+        text-overflow: ellipsis;
+        overflow: hidden;
+    }
+    // .action {
+        // width: 1rem;
+    // }
+}
+
+#current_score { 
+    width: 4em;
+}
+
+// .scores.table { 
+//     margin-bottom: 0px;
+//     border-bottom: 2px solid $table-border;
+// }
+
+/////////////////////// checkboxes
+
+.input-button-group {
+  position: relative;
+}
+
+.input-button-group > label {
+  z-index: 0;
+}
+
+.input-button-group > input[type=checkbox] {
+  cursor: pointer;
+  left: 0;
+  height: 100%;
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: 1;
+}
+
+.input-button-group > input[type=checkbox] + label {
+  background-color: transparent;
+  color: inherit;
+  border-color: darken(white, 25%);
+  border-style: dashed;
+  padding: 0.5em;
+  text-overflow: ellipsis;
+  overflow: hidden;  
+}
+
+.input-button-group > input[type=checkbox]:checked + label {
+    border-color: white;
+    background-color: white;    
+    color: darkgreen;
+}
+
+///////////////////////
+
+@media screen and (max-width: 385px) { 
+    // on very small screen, hide the game type column
+    .roundnr { 
+        display: none;
+    }
+}
+
+@media screen and (max-width: 335px) { 
+    // on very small screen, hide the game type column
+    .gametype { 
+        display: none;
+    }
+}

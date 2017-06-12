@@ -1,6 +1,7 @@
 {
-  "name": "ColourWhist",
+  "name": "hello_au_sass_no_ts_again",
   "type": "project:application",
+  "packageManager": "yarn",
   "platform": {
     "id": "web",
     "displayName": "Web",
@@ -36,9 +37,8 @@
     "displayName": "Visual Studio Code"
   },
   "unitTestRunner": {
-    "id": "karma",
-    "displayName": "Karma",
-    "source": "test/unit/**/*.js"
+    "id": "none",
+    "displayName": "None"
   },
   "paths": {
     "root": "src",
@@ -47,10 +47,6 @@
     "attributes": "resources/attributes",
     "valueConverters": "resources/value-converters",
     "bindingBehaviors": "resources/binding-behaviors"
-  },
-  "testFramework": {
-    "id": "jasmine",
-    "displayName": "Jasmine"
   },
   "build": {
     "targets": [
@@ -120,15 +116,6 @@
           "aurelia-templating-binding",
           "text",
           {
-            "name": "lodash",
-            "path": "../node_modules/lodash",
-            "main": "lodash.min"
-          },
-          {
-            "name": "gun",
-            "path": "../node_modules/gun/gun.min"
-          },
-          {
             "name": "aurelia-templating-resources",
             "path": "../node_modules/aurelia-templating-resources/dist/amd",
             "main": "aurelia-templating-resources"
@@ -143,6 +130,12 @@
             "path": "../node_modules/aurelia-testing/dist/amd",
             "main": "aurelia-testing",
             "env": "dev"
+          },
+          {
+            "name": "gun",
+            "main": "gun.min",
+            "path": "../node_modules/gun",
+            "resources": []
           }
         ]
       }

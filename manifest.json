@@ -1,0 +1,30 @@
+{
+  "short_name": "Whist",
+  "name": "Colour Whist Score Keeper",
+  "background_color": "#316325",
+  "theme_color": "#316325",
+  "display": "standalone",
+  "icons": [
+    {
+      "src": "icons/launcher-whist-48.png",
+      "type": "image/png",
+      "sizes": "48x48"
+    },
+    {
+      "src": "icons/launcher-whist-96.png",
+      "type": "image/png",
+      "sizes": "96x96"
+    },
+    {
+      "src": "icons/launcher-whist-144.png",
+      "type": "image/png",
+      "sizes": "144x144"
+    },
+    {
+      "src": "icons/launcher-whist-192.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    }
+  ],
+  "start_url": "index.html?launcher=true"
+}
