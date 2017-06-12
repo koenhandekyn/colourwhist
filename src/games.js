@@ -27,8 +27,8 @@ export class Games {
 
   newGame() { 
     console.log('fetching random name for game');
-    fetch('https://setgetgo.com/randomword/get.php')
-      .then((response) => {return response.text(); })
+    fetch('http://setgetgo.com/randomword/get.php')
+      .then((response) => { return response.text(); })
       .then((name) => { console.log('response', name); return this.gamesDb.set( {name: name} ); });
   }
 }
