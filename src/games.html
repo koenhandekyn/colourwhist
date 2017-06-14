@@ -6,7 +6,7 @@
        <a href="http://aurelia.io/">Aurelia</a> as the main Javascript framework and
        <a href="http://gun.js.org">GunDB</a> for persistence and synchronisation of the data.
        It's currently written as a <a href="https://developers.google.com/web/progressive-web-apps/">Progressive Web App</a>.
-       To create a new game, simply click <a class="" href="#" click.delegate="newGame()" title="New">New Game</a>
+       To create a new game, simply click <a href="#" click.delegate="newGame()" title="New">New Game</a>
        and a new Game with a random name will be created.
        To allow others to join in the score keeping, just share the game URL with them.
     </p>
@@ -21,6 +21,7 @@
     </ul>
     <section class="section">
       <a class="button is-primary" href="#" click.delegate="newGame()" title="New">New Game</a>
+      <a class="button" href="#" click.delegate="removeGame('test')" title="New">Remove Game</a>
     </section>
   </section>
   <section class="section content">

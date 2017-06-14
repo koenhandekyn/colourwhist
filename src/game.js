@@ -137,4 +137,8 @@ export class Game {
     } else {
     }    
   }
+
+  shareUrl() { 
+    return 'whatsapp://send?text='+window.location;
+  }
 }

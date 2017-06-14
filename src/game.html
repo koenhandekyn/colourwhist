@@ -9,7 +9,7 @@
         <a class="nav-item">${game.name}</a>
       </div>
       <div class="nav-right">
-        <a class="nav-item" route-href="route: games">Home</a>
+        <a class="nav-item" href.bind="shareUrl()">Share</a>
       </div>
     </nav>
     <section class="">
@@ -29,7 +29,6 @@
             <button class="button is-large" id="submit" type="submit" disabled.bind="!canSubmit">Add</button>
           </p>
         </div>
-
       </form>
     </section>
 
