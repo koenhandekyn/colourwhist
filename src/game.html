@@ -85,10 +85,13 @@
       </tbody>
     </table>
     <section class="section content">
-      <p>To add a scrore, first select the game type. 
-         To allow others to join in the score keeping, just share the game URL with them.
+      <p>This is a <a href="https://en.wikipedia.org/wiki/Colour_whist">Coulour Whist</a> score keeping application.
+         To add a scrore, first select the game type, then select the players that are playing, either one or two,
+         depending on the game type. If needed, change the score and push the Add button, to note down the round score.
+         To allow others to join in the score keeping, just share this game URL with them. 
+         They will be able to view the score table in real time.
+         If you push the <a href.bind="shareUrl()">Share</a> button on top you can share it with Whatsapp.
       </p>      
-      <!--<form>-->
       <h3>Players</h3>
       <input class="input" type="text" data-player="player0" value.bind="player0" change.delegate="updatePlayer($event)" />
       <input class="input" type="text" data-player="player1" value.bind="player1" change.delegate="updatePlayer($event)" />
@@ -96,7 +99,6 @@
       <input class="input" type="text" data-player="player3" value.bind="player3" change.delegate="updatePlayer($event)" />
       <h3>Admin</h3>
       <a href="#" click.delegate="remove()" title="Remove" class="button">Destroy Game</a>
-      <!--</form>-->
     </section>
   </section>
 </template>

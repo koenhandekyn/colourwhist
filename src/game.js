@@ -25,10 +25,10 @@ export class Game {
     this.app = app;
     this.gunDb = gunDb.db;
     this.games = games;
-    this.player0 = 'john';
-    this.player1 = 'marie';
-    this.player2 = 'hasan';
-    this.player3 = 'tessa';    
+    this.player0 = 'homer';
+    this.player1 = 'daffy';
+    this.player2 = 'cosmo';
+    this.player3 = 'roger';    
     this.totals = [0,0,0,0];
     this.roundNrMax = 0;
     this.rounds = new Map();
