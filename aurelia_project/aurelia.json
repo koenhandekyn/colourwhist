@@ -136,7 +136,12 @@
             "main": "gun.min",
             "path": "../node_modules/gun",
             "resources": []
-          }
+          },
+          {
+            "name": "words",
+            "main": "index.js",
+            "path": "../node_modules/random-words"
+          }          
         ]
       }
     ]
