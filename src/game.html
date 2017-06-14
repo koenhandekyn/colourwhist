@@ -88,14 +88,14 @@
       <p>To add a scrore, first select the game type. 
          To allow others to join in the score keeping, just share the game URL with them.
       </p>      
-      <a href="#" click.delegate="remove()" title="Remove" class="button">Destroy Game</a>
       <!--<form>-->
       <h3>Players</h3>
       <input class="input" type="text" data-player="player0" value.bind="player0" change.delegate="updatePlayer($event)" />
       <input class="input" type="text" data-player="player1" value.bind="player1" change.delegate="updatePlayer($event)" />
       <input class="input" type="text" data-player="player2" value.bind="player2" change.delegate="updatePlayer($event)" />
       <input class="input" type="text" data-player="player3" value.bind="player3" change.delegate="updatePlayer($event)" />
-        <!--</p>-->
+      <h3>Admin</h3>
+      <a href="#" click.delegate="remove()" title="Remove" class="button">Destroy Game</a>
       <!--</form>-->
     </section>
   </section>
