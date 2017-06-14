@@ -9,6 +9,7 @@
        To create a new game, simply click <a href="#" click.delegate="newGame()" title="New">New Game</a>
        and a new Game with a random name will be created.
        To allow others to join in the score keeping, just share the game URL with them.
+       Once they open the URL, the game will be appended to their game list.
     </p>
   </section>      
   <section class="games">
@@ -16,12 +17,10 @@
     <ul class="menu-list">
       <li class="" repeat.for="[game_id, game] of games">
         <a route-href="route: game; params.bind: { id: game_id }">${game.name}</a>
-        <!--<a href="#" click.delegate="$parent.removeGame(game_id)" title="Remove">[X]</a>-->
       </li>
     </ul>
     <section class="section">
       <a class="button is-primary" href="#" click.delegate="newGame()" title="New">New Game</a>
-      <a class="button" href="#" click.delegate="removeGame('test')" title="New">Remove Game</a>
     </section>
   </section>
   <section class="section content">

@@ -25,17 +25,29 @@ export class Game {
     this.app = app;
     this.gunDb = gunDb.db;
     this.games = games;
-    this.players = ['koen', 'kevin', 'gert', 'yves'];
+    this.player0 = 'john';
+    this.player1 = 'marie';
+    this.player2 = 'hasan';
+    this.player3 = 'tessa';    
     this.totals = [0,0,0,0];
     this.roundNrMax = 0;
-    // this.rounds = [];
     this.rounds = new Map();
   }
 
   activate(params) {
     this.id = params['id'];
     this.gameDb = this.gunDb.get(this.id);
-    this.gameDb.val( game => { this.game = game });
+    this.gameDb.val( game => {
+       this.game = game;
+       // append this game to the list of games for this device
+       this.games.appendGame(this.id, game.name);
+    });
+    // synch player names
+    this.gameDb.get('player0').on( name => this.player0 = name);
+    this.gameDb.get('player1').on( name => this.player1 = name);
+    this.gameDb.get('player2').on( name => this.player2 = name);
+    this.gameDb.get('player3').on( name => this.player3 = name);
+    // 
     this.gameDb.get('rounds').map().on((round,id) => { 
       if (round) {         
         this.rounds.set(id, round);
@@ -140,5 +152,12 @@ export class Game {
 
   shareUrl() { 
     return 'whatsapp://send?text='+window.location;
+  }
+
+  updatePlayer(event) { 
+    let player = event.target.dataset.player;
+    let name = event.target.value;
+    console.log('update player', player, name);
+    this.gameDb.get(player).put(name);
   }
 }

@@ -40,25 +40,25 @@
           <td class="player">
             <div class="input-button-group">
               <input class="form-control" type="checkbox" checked.bind="current_players[0]">
-              <label class="button">${players[0]}</label>
+              <label class="button">${player0}</label>
             </div>
           </td>
           <td class="player">
             <div class="input-button-group">
               <input class="form-control" type="checkbox" checked.bind="current_players[1]">
-              <label class="button">${players[1]}</label>
+              <label class="button">${player1}</label>
             </div>
           </td>
           <td class="player">
             <div class="input-button-group">
               <input class="form-control" type="checkbox" checked.bind="current_players[2]">
-              <label class="button">${players[2]}</label>
+              <label class="button">${player2}</label>
             </div>
           </td>
           <td class="player">
             <div class="input-button-group">
               <input class="form-control" type="checkbox" checked.bind="current_players[3]">
-              <label class="button">${players[3]}</label>
+              <label class="button">${player3}</label>
             </div>
           </td>
         </tr>
@@ -67,8 +67,8 @@
           <th class="gametype"></th>
           <th class="player">${totals[0]}</th>
           <th class="player">${totals[1]}</th>
-          <th class="player">${totals[3]}</th>
           <th class="player">${totals[2]}</th>
+          <th class="player">${totals[3]}</th>
           <!--<th class="action"></th>-->
         </tr>
       </thead>
@@ -89,6 +89,14 @@
          To allow others to join in the score keeping, just share the game URL with them.
       </p>      
       <a href="#" click.delegate="remove()" title="Remove" class="button">Destroy Game</a>
+      <!--<form>-->
+      <h3>Players</h3>
+      <input class="input" type="text" data-player="player0" value.bind="player0" change.delegate="updatePlayer($event)" />
+      <input class="input" type="text" data-player="player1" value.bind="player1" change.delegate="updatePlayer($event)" />
+      <input class="input" type="text" data-player="player2" value.bind="player2" change.delegate="updatePlayer($event)" />
+      <input class="input" type="text" data-player="player3" value.bind="player3" change.delegate="updatePlayer($event)" />
+        <!--</p>-->
+      <!--</form>-->
     </section>
   </section>
 </template>

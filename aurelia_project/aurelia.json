@@ -141,7 +141,12 @@
             "name": "words",
             "main": "index.js",
             "path": "../node_modules/random-words"
-          }          
+          },
+          {
+            "name": "guid",
+            "main": "guid.js",
+            "path": "../node_modules/guid"
+          }
         ]
       }
     ]

@@ -6,7 +6,7 @@ import {inject} from 'aurelia-framework';
 export class Games {  
   constructor(gunDb)  {    
     this.games = new Map();    
-    this.gamesDb = gunDb.db.get('games/koen');
+    this.gamesDb = gunDb.db.get('games/'+this.deviceId());
     this.gamesDb.map().on((game, id) => {      
       if (game) { 
         this.games.set(id,game);
@@ -14,6 +14,14 @@ export class Games {
         this.games.delete(id);
       }
     });    
+  }
+
+  deviceId() { 
+    if (!localStorage.deviceId) {
+      let guid = require('guid');    
+      localStorage.deviceId = guid.raw();
+    }
+    return localStorage.deviceId;
   }
 
   deactivate() {
@@ -35,6 +43,13 @@ export class Games {
     // fetch('http://setgetgo.com/randomword/get.php')
     //   .then((response) => { return response.text(); })
     //   .then((name) => { console.log('response', name); return this.gamesDb.set( {name: name} ); });
+  }
+
+  appendGame(key, name) {
+    console.log('appendGame', key, name);
+    let game = {};
+    game[key] = { name: name};
+    this.gamesDb.put( game );    
   }
 }
 
